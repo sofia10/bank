@@ -28,7 +28,6 @@
     <link href="plugins/animatecss/animate.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="plugins/bootstrap-select/dist/css/bootstrap-select.css">
-    <link rel="stylesheet" href="plugins/swiperSlider/css/swiper.min.css">
     <!--Custom Css-->
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -53,7 +52,7 @@
                                 <a href="#!" class="header-menu_link">მთავარი</a>
                             </li>
                             <li class="header-menu_item">
-                                <a href="#!" class="header-menu_link">სესხი</a>
+                                <a href="#!" class="header-menu_link active">სესხი</a>
                             </li>
                             <li class="header-menu_item">
                                 <a href="#!" class="header-menu_link">ანაბარი</a>
@@ -124,38 +123,104 @@
                 <div class="d-flex align-items-center justify-content-between social-block">
                     <div class="page-title">
                         <img src="images/bubble@2x.png" alt="">
-                        <h1>ჩვენ შესახებ</h1>
-                    </div>
-                    <div>
-                        <span>გააზიარე:</span>
-                        <a href="#!"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#!"><i class="fab fa-twitter-square"></i></a>
+                        <h1>მიიღე სესხი</h1>
                     </div>
                 </div>
-                <div class="aboutpage-block">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="image">
-                                <img src="uploads/images/about@2x.png" alt="">
-                                <div class="img-title d-flex flex-column justify-content-between">
-                                    <img src="images/logo3@2x.png" alt="" class="logo-circle">
-                                    <span>ჩვენ დაგეხმარებით ოპტიმალური არჩევანის გაკეთებაში</span>
+                <div class="loan-block">
+                    <div class="step-content first-step active">
+                        <h2 class="title text-center">სად გსურთ სესხის აღება ?</h2>
+                        <form action="" class="d-flex flex-column align-items-center">
+                            <select class="selectpicker">
+                                <option value="">აირჩიე ქალაქი</option>
+                                <option value="">თბილისი</option>
+                                <option value="">ბათუმი</option>
+                                <option value="">ქუთაისი</option>
+                            </select>
+                            <a href="#!" class="next-btn next-btn1 d-flex align-items-center">
+                                გაგრძელება
+                                <img src="images/angle-right@2x.png" alt="">
+                                <img src="images/angle-right-gr@2x.png" alt="" class="green">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="step-content second-step">
+                        <h2 class="title text-center">აირჩიეთ სასესხო პროდუქტი</h2>
+                        <form action="" class="d-flex flex-column align-items-center">
+                            <select class="selectpicker">
+                                <option value="">აირჩიე პროდუქტი</option>
+                                <option value="">თბილისი</option>
+                                <option value="">ბათუმი</option>
+                                <option value="">ქუთაისი</option>
+                            </select>
+                            <a href="#!" class="next-btn next-btn2 d-flex align-items-center">
+                                გაგრძელება
+                                <img src="images/angle-right@2x.png" alt="">
+                                <img src="images/angle-right-gr@2x.png" alt="" class="green">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="step-content third-step">
+                        <h2 class="title text-center">სასურველი თანხა</h2>
+                        <form action="" class="d-flex flex-column align-items-center">
+                            <div class="d-flex align-items-start flex-column input-main">
+                                <label for="money">ჩაწერეთ სასურველი თანხა</label>
+                                <div class="input-block error-input d-flex flex-column">
+                                    <span class="icon">₾</span>
+                                    <input type="text" id="money" class="money-input">
+                                    <span class="error">თანხა არ უნდა აღემატებოდეს 1 000 000 ლარს</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="desc">
-                                <div class="title">კომპანიის მიზანი</div>
-                                <p class="txt">საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ დაზგაზე წიგნის საცდელი ეგზემპლარი დაბეჭდა. მისი ტექსტი არამარტო 5 საუკუნის მანძილზე შემორჩა, არამედ მან დღემდე, ელექტრონული ტიპოგრაფიის დრომდეც უცვლელად მოაღწია. განსაკუთრებული პოპულარობა მას 1960-იან წლებში გამოსულმა Letraset-ის ცნობილმა ტრაფარეტებმა მოუტანა, უფრო მოგვიანებით კი — Aldus PageMaker-ის ტიპის საგამომცემლო პროგრამებმა, რომლებშიც Lorem Ipsum-ის სხვადასხვა ვერსიები იყო ჩაშენებული.
-
-                                    რატომ ვიყენებთ მას?
-                                    ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ</p>
+                            <a href="#!" class="next-btn next-btn3 d-flex align-items-center">
+                                გაგრძელება
+                                <img src="images/angle-right@2x.png" alt="">
+                                <img src="images/angle-right-gr@2x.png" alt="" class="green">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="step-content fourth-step">
+                        <h2 class="title text-center">რა ვადით გსურთ სესხის აღება ?</h2>
+                        <form action="" class="d-flex flex-column align-items-center">
+                            <div class="d-flex align-items-start flex-column input-main">
+                                <label>ჩაწერეთ სასურველი ვადა თვეებში</label>
+                                <div class="input-block d-flex flex-column">
+                                    <input type="text" id="" class="">
+                                </div>
                             </div>
-                        </div>
+                            <a href="#!" class="next-btn next-btn4 d-flex align-items-center">
+                                გაგრძელება
+                                <img src="images/angle-right@2x.png" alt="">
+                                <img src="images/angle-right-gr@2x.png" alt="" class="green">
+                            </a>
+                        </form>
+                    </div>
+                    <div class="step-content fifth-step">
+                        <h2 class="title text-center">რა ვადით გსურთ საშეღავათო პერიოდი ?</h2>
+                        <form action="" class="d-flex flex-column align-items-center">
+                            <div class="d-flex align-items-start flex-column input-main">
+                                <label>ჩაწერეთ სასურველი ვადა თვეებში</label>
+                                <div class="input-block d-flex flex-column">
+                                    <input type="text" class="">
+                                </div>
+                            </div>
+                            <a href="#!" class="next-btn next-btn5 d-flex align-items-center">
+                                გაგრძელება
+                                <img src="images/angle-right@2x.png" alt="">
+                                <img src="images/angle-right-gr@2x.png" alt="" class="green">
+                            </a>
+                        </form>
+                    </div>
+
+
+                    <div class="steps d-flex">
+                        <div class="step active step1"></div>
+                        <div class="step step2"></div>
+                        <div class="step step3"></div>
+                        <div class="step step4"></div>
+                        <div class="step step5"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>`
     </main>
 
     <footer class="site__footer">
@@ -209,10 +274,10 @@
     <script src="plugins/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
     <script src="plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="plugins/bootstrap-select/dist/js/bootstrap-select.js"></script>
-    <script src="plugins/swiperSlider/js/swiper.min.js"></script>
 
     <!--Custom Scripts-->
     <script src="minJs/default.min.js"></script>
+    <script src="minJs/loan.min.js"></script>
 
 </body>
 </html>

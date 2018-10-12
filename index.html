@@ -38,16 +38,17 @@
 </head>
 <body class="site">
     <header class="site__header">
-        <div class="header">
-            <div class="header-bg"></div>
-            <div class="header-img"></div>
-            <div class="header-block">
-                <div class="container">
-                    <div class="header-row row justify-content-between align-items-center">
-                        <a href="#!" class="logo col-md-4">
-                            <img src="images/logo.svg" alt="">
-                        </a>
-                        <ul class="header-menu d-flex justify-content-end col-md-8">
+    <div class="header">
+        <div class="header-bg"></div>
+        <div class="header-img"></div>
+        <div class="header-block">
+            <div class="container">
+                <div class="header-row row justify-content-between align-items-center">
+                    <a href="#!" class="logo col-4">
+                        <img src="images/logo.svg" alt="">
+                    </a>
+                    <div class="col-8 d-flex justify-content-end">
+                        <ul class="header-menu d-lg-flex d-none justify-content-end">
                             <li class="header-menu_item">
                                 <a href="#!" class="header-menu_link">მთავარი</a>
                             </li>
@@ -76,16 +77,50 @@
                                 <a href="#!" class="header-menu_link">კონტაქტი</a>
                             </li>
                         </ul>
+                        <div class="burger-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="burger-nav">
+                            <img src="images/cancel.svg" alt="" class="close-btn">
+                            <div class="align-items-center d-flex social-block">
+                                <a href="#!"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#!"><i class="fab fa-twitter-square"></i></a>
+                            </div>
+                            <div class="burger-menu d-flex flex-column align-items-center">
+                                <a href="#!" class="burger-menu-link">მთავარი</a>
+                                <a href="#!" class="burger-menu-link">სესხი</a>
+                                <a href="#!" class="burger-menu-link">ანაბარი</a>
+                                <div class="burger-menu-link bg-inner-menu">
+                                    <div class="d-flex clicker-menu">
+                                        გზავნილი
+                                        <i class="fa fa-angle-right"></i>
+                                        <i class="fa fa-angle-down"></i>
+                                    </div>
+                                    <div class="bg-menu d-flex flex-column">
+                                        <a href="#!" class="inner-link">გაგზავნა</a>
+                                        <a href="#!" class="inner-link">მიღება</a>
+                                    </div>
+                                </div>
+                                <a href="#!" class="burger-menu-link">აქციები</a>
+                                <a href="#!" class="burger-menu-link">ჩვენ შესახებ</a>
+                                <a href="#!" class="burger-menu-link">დახმარება</a>
+                                <a href="#!" class="burger-menu-link">ხშირად დასმული კითხვები</a>
+                                <a href="#!" class="burger-menu-link">კონტაქტი</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <main class="site__content">
         <div class="content">
             <div class="container">
-                <div class="d-flex align-items-center justify-content-end social-block">
+                <div class="d-none d-md-flex align-items-center justify-content-end social-block">
                     <span>გააზიარე:</span>
                     <a href="#!"><i class="fab fa-facebook-square"></i></a>
                     <a href="#!"><i class="fab fa-twitter-square"></i></a>
@@ -112,7 +147,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-5 d-none d-md-flex">
                                         <div class="slide-images">
                                             <img src="images/bubble@2x.png" class="bubble bubble-top" alt="">
                                             <img src="images/bubble@2x.png" class="bubble bubble-btm" alt="">
@@ -138,7 +173,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-5 d-none d-md-flex">
                                         <div class="slide-images">
                                             <img src="images/bubble@2x.png" class="bubble bubble-top" alt="">
                                             <img src="images/bubble@2x.png" class="bubble bubble-btm" alt="">
@@ -164,7 +199,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-5 d-none d-md-flex">
                                         <div class="slide-images">
                                             <img src="images/bubble@2x.png" class="bubble bubble-top" alt="">
                                             <img src="images/bubble@2x.png" class="bubble bubble-btm" alt="">
@@ -181,36 +216,36 @@
             </div>
             <div class="bullets">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 bull d-flex flex-column justify-content-between">
+                    <div class="d-flex bullets-row">
+                        <div class="col-lg-4 col-md-12 bull flex-column justify-content-between">
                             <div class="progress-line">
                                 <div class="line">
                                     <div class="line line-gr"></div>
                                 </div>
                             </div>
-                            <div class=" d-flex align-items-center">
+                            <div class=" d-flex align-items-center justify-content-center">
                                 <img src="images/icon1@2x.png" alt="">
                                 <div class="title">მიიღე სესხი</div>
                             </div>
                         </div>
-                        <div class="col-md-4 bull d-flex flex-column justify-content-between">
+                        <div class="col-lg-4 col-md-12 bull flex-column justify-content-between">
                             <div class="progress-line">
                                 <div class="line">
                                     <div class="line line-gr"></div>
                                 </div>
                             </div>
-                            <div class=" d-flex align-items-center">
+                            <div class=" d-flex align-items-center justify-content-center">
                                 <img src="images/icon2@2x.png" alt="">
                                 <div class="title">გახსენი ანაბარი</div>
                             </div>
                         </div>
-                        <div class="col-md-4 bull d-flex flex-column justify-content-between">
+                        <div class="col-lg-4 col-md-12 bull flex-column justify-content-between">
                             <div class="progress-line">
                                 <div class="line">
                                     <div class="line line-gr"></div>
                                 </div>
                             </div>
-                            <div class=" d-flex align-items-center">
+                            <div class=" d-flex align-items-center justify-content-center">
                                 <img src="images/icon3@2x.png" alt="">
                                 <div class="title">მართე გზავნილი</div>
                             </div>
@@ -218,7 +253,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bankad d-md-flex d-none align-items-center">
+            <div class="bankad d-lg-flex d-none align-items-center">
                 <div class="container">
                     <div class="bankad-cont row">
                         <div class="col-md-6">
@@ -255,21 +290,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap priority">
+                                <div class="d-flex priority">
                                     <img src="images/bubble-gr@2x.png" alt="" class="bubble-gr">
-                                    <div class="col-md-4 priority-item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="col-md-4 col-12 priority-item d-flex flex-column align-items-center justify-content-center">
                                         <div class="num">30+</div>
                                         <div class="title">პარტნიორი
                                             კომპანია</div>
                                         <p class="txt">საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც </p>
                                     </div>
-                                    <div class="col-md-4 priority-item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="col-md-4 col-12 priority-item d-flex flex-column align-items-center justify-content-center">
                                         <div class="num">30+</div>
                                         <div class="title">მეტი სარგებელი
                                             ჩვენი არჩევისას</div>
                                         <p class="txt">საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც </p>
                                     </div>
-                                    <div class="col-md-4 priority-item d-flex flex-column align-items-center justify-content-center">
+                                    <div class="col-md-4 col-12 priority-item d-flex flex-column align-items-center justify-content-center">
                                         <div class="num"><img src="images/infinity@2x.png" class="infinity" alt=""></div>
                                         <div class="title">კმაყოფილი
                                             მომხმარებელი</div>
@@ -358,10 +393,10 @@
         <div class="footer">
             <div class="container">
                 <div class="footer-sup row justify-content-between align-items-center">
-                    <a href="#!" class="logo col-md-4">
+                    <a href="#!" class="logo col-md-4 text-md-left text-center">
                         <img src="images/logo.svg" alt="">
                     </a>
-                    <ul class="footer-menu d-flex justify-content-end col-md-8">
+                    <ul class="footer-menu d-flex justify-content-md-end justify-content-between col-md-8">
                         <li class="footer-menu_item">
                             <a href="#!" class="footer-menu_link">მიიღე სესხი</a>
                         </li>
@@ -374,12 +409,14 @@
                     </ul>
                 </div>
                 <div class="footer-sub row">
-                    <div class="d-flex flex-column col-md-4">
-                        <span>© 2018 Bankfinder</span>
-                        <span>ყველა უფლება დაცულია</span>
+                    <div class="d-flex flex-column col-md-4 align-items-md-start align-items-center">
+                        <div class="d-flex flex-md-column flex-row">
+                            <span>© 2018 Bankfinder</span>
+                            <span>ყველა უფლება დაცულია</span>
+                        </div>
                         <a href="mobility.ge"><img src="images/mobility@2x.png" alt=""></a>
                     </div>
-                    <div class="menu d-flex col-md-8 justify-content-end">
+                    <div class="menu d-md-flex d-none col-md-8 justify-content-end">
                         <div class="d-flex flex-column left">
                             <a href="#!" class="menu-link">დახმარება</a>
                             <a href="#!" class="menu-link">ხშირად დასმული კითხვები</a>
@@ -407,6 +444,12 @@
     <!--Custom Scripts-->
     <script src="minJs/default.min.js"></script>
     <script src="minJs/index.min.js"></script>
+<script>
+    var menu = {
+        img: ['images/icon1@2x.png', 'images/icon2@2x.png', 'images/icon3@2x.png'],
+        text: ['მიიღე სესხი', 'გახსენი ანაბარი', 'მართე გზავნილი']
+    }
+</script>
 
 </body>
 </html>

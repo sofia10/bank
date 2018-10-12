@@ -83,6 +83,9 @@ p{
               .header-menu_link{
                 @include font-style($mtavruli-bold,16px,$dark);
               }
+              .header-menu_link.active{
+                color: $green;
+              }
               .header-menu_drop{
                 position: absolute;
                 opacity: 0;
@@ -143,7 +146,7 @@ p{
           .burger-nav{
             width: 100%;
             height: 100vh;
-            background-color: $green;
+            background-color: $dark-green;
             position: fixed;
             z-index: 99;
             top: 0;
@@ -157,6 +160,10 @@ p{
               position: absolute;
               top: 20px;
               right: 20px;
+            }
+            .social-block{
+              margin-left: 10px;
+              margin-top: 20px;
             }
             .burger-menu{
               margin: 30px 30px;
@@ -210,6 +217,24 @@ p{
     height: 100px;
   }
 }
+.social-block{
+  span{
+    @include font-style($primary-font,12px,#FFF);
+    margin-right: 10px;
+  }
+  i{
+    font-size: 24px;
+    margin-left: 10px;
+    color: #FFF;
+  }
+  .page-title{
+    h1{
+      margin-left: -30px;
+      @include font-style($mtavruli-bold,30px,$dark-green);
+      position: relative;
+    }
+  }
+}
 
 .site__content{
   margin-top: 170px;
@@ -220,6 +245,7 @@ p{
       position: absolute;
       right: 80px;
       bottom: 30px;
+      z-index: -1;
     }
     .social-block{
       span{
@@ -232,23 +258,30 @@ p{
         color: $dark-green;
       }
       .page-title{
+        @include display-flex;
+        @include align-items(center);
+        img{
+          width: 74px;
+          height: 74px;
+          object-position: center;
+          object-fit: cover;
+        }
         h1{
           @include font-style($mtavruli-bold,30px,$dark-green);
-          padding-left: 50px;
           position: relative;
-          &:before{
-            content: '';
-            background-image: url("../../images/bubble@2x.png");
-            width: 74px;
-            height: 74px;
-            background-size: 100%;
-            background-position: center;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            z-index: -1;
-          }
+          //&:before{
+          //  content: '';
+          //  background-image: url("../../images/bubble@2x.png");
+          //  width: 74px;
+          //  height: 74px;
+          //  background-size: 100%;
+          //  background-position: center;
+          //  position: absolute;
+          //  top: 50%;
+          //  left: 0;
+          //  transform: translateY(-50%);
+          //  z-index: -1;
+          //}
         }
       }
     }
@@ -283,6 +316,9 @@ p{
           }
           .title{
             @include font-style($mtavruli-bold,42px,$dark-green);
+            @media (max-width: 991px){
+              font-size: 24px;
+            }
           }
           .txt{
             margin-top: 30px;
@@ -313,12 +349,19 @@ p{
                 display: block;
               }
             }
+            @media (max-width: 991px){
+              padding: 14px 30px 12px;
+            }
           }
         }
         .slide-images{
           .bubble{
             width: 74px;
             position: absolute;
+            z-index: -1;
+            @media (max-width: 991px){
+              width: 44px;
+            }
           }
           .bubble-btm{
             transform: rotate(90deg);
@@ -326,6 +369,9 @@ p{
           .bubble-top{
             top: 0;
             right: 55px;
+            @media (max-width: 991px){
+              right: 0;
+            }
           }
           .bubble-btm{
             bottom: 0;
@@ -334,6 +380,9 @@ p{
           .slide-img{
             width: 236px;
             margin-left: 70px;
+            @media (max-width: 991px){
+              width: 160px;
+            }
           }
           .img2{
             margin-left: 0;
@@ -375,12 +424,24 @@ p{
       .slick-dots{
         display: none;
       }
+      .bullets-row{
+        overflow: hidden;
+        @media (max-width: 991px){
+          .bull{
+            display: none;
+          }
+          .bull.active{
+            @include display-flex;
+          }
+        }
+      }
       .bull{
         height: 160px;
         width: 100%;
         background-color: #F2F2F2;
         border: none;
         padding: 40px 30px;
+        @include display-flex;
         img{
           width: 40px;
           margin-right: 30px;
@@ -471,15 +532,26 @@ p{
                 height: 158px;
                 object-fit: cover;
                 z-index: -1;
+                @media (max-width: 767px){
+                  height: 108px;
+                }
               }
               .title{
                 @include font-style($mtavruli-bold,30px,$dark);
                 padding-left: 50px;
               }
+              @media (max-width: 767px){
+                .title{
+                  font-size: 24px;
+                }
+              }
             }
             .desc{
               .txt{
                 @include font-style($primary-font,14px,#9B9B9B)
+              }
+              @media (max-width: 767px){
+                  margin-top: 20px;
               }
             }
             .priority{
@@ -528,6 +600,24 @@ p{
                 &:not(:last-child){
                   border-right: 1px solid #E6E6E6;
                 }
+              }
+              @media (max-width: 991px){
+                padding: 30px 10px;
+              }
+              @media (max-width: 767px){
+                overflow-y: hidden;
+                overflow-x: scroll;
+                .priority-item{
+                  border: none!important;
+                }
+              }
+              &::-webkit-scrollbar {
+                width: 0px;  /* remove scrollbar space */
+                background: transparent;  /* optional: just make scrollbar invisible */
+              }
+              /* optional: show position indicator in red */
+              &::-webkit-scrollbar-thumb {
+                background: transparent;
               }
             }
           }
@@ -581,6 +671,9 @@ p{
         &:hover{
           border-color: $green;
           color: $green;
+        }
+        @media (max-width: 767px){
+          display: none;
         }
       }
       .swiper-button-prev{
@@ -669,36 +762,910 @@ p{
     }
     .contact-cont{
       position: relative;
+      margin-top: 40px;
       #map{
         height: 400px;
       }
-      .contact-block{
-        background-color: $dark-green;
-        width: 500px;
-        height: 400px;
-        border: 13px solid #FFF;
-        position: absolute;
-        top: 80%;
-        z-index: 1;
-        padding: 40px;
-        img{
-          width: 55px;
-        }
-        .title{
-          margin-left: 30px;
-          @include font-style($mtavruli-bold,24px,#FFF);
-        }
-        .cont-item{
-          height: 60px;
-          span{
+      .contact-row{
+        position: relative;
+        .contact-block{
+          background-color: $dark-green;
+          height: 400px;
+          border: 13px solid #FFF;
+          top: -50px;
+          z-index: 1;
+          padding: 40px;
+          img{
+            width: 55px;
+          }
+          .title{
             margin-left: 30px;
-            @include font-style($primary-font,18px,#FFF);
+            @include font-style($mtavruli-bold,24px,#FFF);
           }
+          .cont-list{
+            margin-top: 20px;
+            .cont-item{
+              height: 60px;
+              span{
+                margin-left: 30px;
+                @include font-style($primary-font,18px,#FFF);
+              }
+              i{
+                color: #FFF;
+              }
+              &:not(:last-child){
+                border-bottom: 1px solid #286B55;
+              }
+            }
+          }
+        }
+        .form{
+          margin-top: 45px;
+          .textarea-effect{
+            width: 100%!important;
+            padding: 0!important;
+            label{
+              left: 0;
+            }
+          }
+          .input-effect{
+            width: 300px;
+            margin-bottom: 15px;
+            textarea{
+              width: 100%;
+              height: 90px;
+            }
+            input{
+              height: 50px;
+              border-bottom: 1px solid #DDDDDD;
+              padding-left: 20px;
+              @include border-radius(3px);
+              @include font-style($primary-font,12px,#535353);
+              &:focus{
+                border-color: $green;
+              }
+            }
+            label{
+              @include font-style($primary-font,12px,#3E3E3E);
+            }
+            @media (max-width: 767px){
+              width: 100%;
+            }
+          }
+          .input-effect.active{
+            label{
+              top: -9px;
+              left: 10px;
+              color: $green!important;
+              background-color: #FFF;
+              padding: 0 10px;
+              z-index: 1;
+              width: auto;
+              font-size: 12px;
+              font-family: $mtavruli-bold!important;
+              transition: 0.3s;
+            }
+            input{
+              border-color: $green;
+            }
+          }
+          .submit{
+            cursor: pointer;
+            height: 50px;
+            width: auto;
+            background-color: $green;
+            border: 1px solid $green;
+            @include font-style($mtavruli-bold,16px,#FFF);
+            @include border-radius(5px);
+            padding: 15px 30px;
+            &:hover{
+              background-color: #FFF;
+              color: $green;
+            }
+          }
+          @media (max-width: 991px){
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .promos{
+      margin-top: 40px;
+      .promos-item{
+        margin-bottom: 40px;
+        .image{
+          width: 100%;
+          height: 150px;
+          border: 1px solid #E6E6E6;
+          box-shadow: 0 1px 3px #E6E6E6;
+          @include border-radius(3px);
+          img{
+            max-width: 180px;
+          }
+          @media (max-width: 575px){
+            margin: 0 15px;
+          }
+        }
+        .desc{
+          .date{
+            background-color: $green;
+            @include border-radius(2px);
+            @include font-style($primary-font,12px,#FFF);
+            padding: 8px 10px;
+          }
+          .title{
+            margin-top: 10px;
+            @include font-style($mtavruli-bold,14px,#585858);
+          }
+          @media (max-width: 575px){
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .promos-det{
+      .image{
+        width: 250px!important;
+        min-width: 250px;
+        height: 150px!important;
+        margin-right: 30px;
+        @media (max-width: 767px){
+          width: 220px!important;
+          min-width: 220px;
+          margin-right: 15px;
+        }
+      }
+      .desc{
+        .title{
+          font-size: 20px!important;
+          @media (max-width: 767px){
+            font-size: 16px!important;
+          }
+        }
+      }
+      .det-block{
+        .det-block_title{
+          margin-bottom: 15px;
+          @include font-style($mtavruli-bold,18px,#585858);
+        }
+        .txt{
+          margin-bottom: 20px;
+          color: #9B9B9B;
+        }
+        .download-links{
+          @include font-style($primary-font,14px,$green);
+        }
+        .link{
+          display: block;
+          margin-top: 20px;
+          @include font-style($primary-font,12px,$dark);
           i{
-            color: #FFF;
+            font-size: 18px;
+            color: $green;
+            margin-right: 15px;
           }
-          &:not(:last-child){
-            border-bottom: 1px solid #286B55;
+        }
+      }
+      .promos-item{
+        @media (max-width: 575px){
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+          .desc{
+            align-items: center!important;
+          }
+        }
+      }
+    }
+    .faq{
+      margin-top: 50px;
+      background-color: #FFF;
+      border: 1px solid #E6E6E6;
+      box-shadow: 0 2px 7px #eaeaea;
+      .accordion {
+        .card {
+          padding: 10px 30px;
+          border: none;
+          border-top: 1px solid #DBDBDB;
+          .card-header {
+            cursor: pointer;
+            background-color: #FFF;
+            border: none;
+            padding: 0;
+            padding: 8px 0;
+            h5 {
+              padding: 0;
+              @include display-flex;
+              @include align-items(center);
+              @include justify-content(space-between);
+              span {
+                @include font-style($mtavruli-bold, 16px, #585858);
+                @media (max-width: 575px) {
+                  font-size: 14px;
+                }
+              }
+              img {
+                cursor: pointer;
+                width: 12px;
+              }
+              .min {
+                display: none;
+              }
+            }
+            h5.active{
+              .plus{
+                display: none;
+              }
+              .min{
+                display: block;
+              }
+            }
+          }
+          .card-body {
+            padding-left: 0;
+            color: #9B9B9B;
+          }
+        }
+        .card.active {
+          .plus {
+            display: none;
+          }
+          .min {
+            display: block !important;
+          }
+          h5{
+            span{
+              color: $dark-green;
+            }
+          }
+        }
+      }
+    }
+    .loan-block{
+      position: relative;
+      margin-top: 50px;
+      background-color: #FFF;
+      border: 1px solid #E6E6E6;
+      box-shadow: 0 5px 140px #eaeaea;
+      padding: 80px 0;
+      .title{
+        @include font-style($mtavruli-bold,20px,$dark);
+      }
+      .next-btn{
+        width: auto;
+        background-color: $green;
+        border: 1px solid $green;
+        @include font-style($mtavruli-bold,16px,#FFF);
+        @include border-radius(5px);
+        padding: 14px 65px 12px;
+        img{
+          margin-left: 15px;
+          width: 5px;
+        }
+        .green{
+          display: none;
+        }
+        &:hover{
+          background-color: #FFF;
+          color: $green;
+          img{
+            display: none;
+          }
+          img.green{
+            display: block;
+          }
+        }
+      }
+      .bootstrap-select{
+        margin: 40px 0 60px;
+        border: 1px solid #DFDFDF;
+        width: 360px;
+        height: 50px;
+        @include border-radius(3px);
+        .btn-light{
+          border: none;
+          background-color: #FFF;
+          @include display-flex;
+          @include align-items(center);
+          &:focus{
+            outline: none!important;
+          }
+          &:hover{
+            border: none;
+          }
+        }
+        span{
+          @include font-style($primary-font,14px,$dark);
+        }
+        @media (max-width: 575px){
+          width: 320px;
+        }
+      }
+      .input-main{
+        margin: 40px 0 60px;
+        .input-block{
+          position: relative;
+          .icon{
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            @include font-style($primary-font,24px,#9B9B9B);
+          }
+        }
+        .error-input{
+          input{
+            border-color: #FF0000;
+          }
+          .error{
+            margin-top: 5px;
+            @include font-style($primary-font,12px,#FF0000);
+          }
+        }
+        label{
+          @include font-style($mtavruli-bold,14px,$dark);
+          margin-bottom: 10px;
+        }
+        input{
+          border: 1px solid #DFDFDF;
+          width: 360px;
+          height: 50px;
+          padding-left: 10px;
+          @include border-radius(3px);
+          @include font-style($primary-font,14px,$dark);
+          @media (max-width: 575px){
+            width: 320px;
+          }
+        }
+      }
+      .steps {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #ECECEC;
+        .step {
+          position: relative;
+          height: 3px;
+          width: 90px;
+          &:after{
+            border: 4px solid #FFF;
+            background-color: #ECECEC;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            width: 38px;
+            height: 38px;
+            right: 0;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            @include border-radius(50%);
+          }
+        }
+        .step1 {
+          width: 400px;
+          &:after {
+            content: '1';
+          }
+          @media (max-width: 1199px){
+            width: 300px;
+          }
+          @media (max-width: 991px){
+            width: 180px;
+          }
+          @media (max-width: 767px){
+            width: 95px;
+          }
+        }
+        .step2 {
+          &:after {
+            content: '2';
+          }
+        }
+        .step3 {
+          &:after {
+            content: '3';
+          }
+        }
+        .step4 {
+          &:after {
+            content: '4';
+          }
+        }
+        .step5 {
+          &:after {
+            content: '5';
+          }
+        }
+        .step6 {
+          &:after {
+            content: '6';
+          }
+        }
+        .step.active {
+          background-color: $green;
+          &:after {
+            background-color: $green;
+          }
+        }
+        @media (max-width: 575px){
+          display: none!important;
+        }
+      }
+      .step-content{
+        display:  none;
+      }
+      .step-content.active{
+        display: block;
+      }
+    }
+    .deposit-block{
+      .step1 {
+        width: 370px!important;
+        @media (max-width: 1199px){
+          width: 260px!important;
+        }
+        @media (max-width: 991px){
+          width: 140px!important;
+        }
+        @media (max-width: 767px){
+          width: 50px!important;
+        }
+      }
+    }
+    .transfer-block{
+      .step1 {
+        width: 450px!important;
+        @media (max-width: 1199px){
+          width: 350px!important;
+        }
+        @media (max-width: 991px){
+          width: 230px!important;
+        }
+        @media (max-width: 767px){
+          width: 140px!important;
+        }
+      }
+    }
+    .receive-block{
+      .step1 {
+        width: 550px!important;
+        @media (max-width: 1199px){
+          width: 430px!important;
+        }
+        @media (max-width: 991px){
+          width: 310px!important;
+        }
+        @media (max-width: 767px){
+          width: 220px!important;
+        }
+      }
+    }
+    .loan-table{
+      margin-top: 50px;
+      background-color: #FFF;
+      border: 1px solid #E6E6E6;
+      box-shadow: 0 20px 100px #eaeaea;
+      @include border-radius(3px);
+      .top{
+        padding: 0 30px;
+        height: 80px;
+        box-shadow: 0 3px 40px #E6E6E6;
+        .text{
+          @include font-style($primary-font,14px,$dark);
+          span {
+            font-family: $bold-font;
+          }
+          @media (max-width: 767px){
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+        }
+        .edit-btn{
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          @include font-style($primary-font,14px,$green);
+          img{
+            margin-left: 10px;
+            width: 24px;
+          }
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        @media (max-width: 991px){
+          height: 90px;
+          padding: 0 15px;
+        }
+      }
+      table{
+        width: 100%;
+        margin: 0;
+        thead{
+          tr{
+            height: 70px;
+            th{
+              text-align: center;
+              border-color: #E8E8E8;
+              vertical-align: middle;
+              border-bottom-width: 1px;
+              border: none;
+              background:url('../../images/line.png') bottom right no-repeat;
+              background-position-x: 0;
+              @include font-style($mtavruli-bold,16px,$dark-green);
+            }
+          }
+        }
+        tbody{
+          tr{
+            height: 90px;
+            td{
+              border-color: #E8E8E8;
+              vertical-align: middle;
+              font-family: Roboto, sans-serif;
+              font-weight: bold;
+              font-size: 14px;
+              color: $dark;
+              img{
+                max-width: 200px;
+              }
+              &:not(:first-child){
+                text-align: center;
+              }
+              .check {
+                margin-right: 10px;
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                input{
+                  position: absolute;
+                  opacity: 0;
+                  cursor: pointer;
+                }
+              }
+              .checkmark {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                height: 24px;
+                width: 24px;
+                background-color: #FFF;
+                border-radius: 50%;
+                border: 1px solid #D9D9D9;
+              }
+              .check:hover input ~ .checkmark {
+                background-color: #ccc;
+              }
+              .check input:checked ~ .checkmark {
+                background-color: $green;
+              }
+              .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              .check input:checked ~ .checkmark:after {
+                display: block;
+              }
+              .check .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+            }
+            .loc{
+              width: 250px;
+            }
+          }
+          tr.active{
+            background-color: #F5FCFA;
+          }
+        }
+      }
+    }
+    .loan-btm{
+      margin-top: 50px;
+      .txt-block{
+        .txt{
+          @include font-style($primary-font,12px,$dark);
+        }
+        @media (max-width: 991px){
+          margin-bottom: 15px;
+        }
+      }
+      .next-btn{
+        width: auto;
+        background-color: $green;
+        border: 1px solid $green;
+        @include font-style($mtavruli-bold,16px,#FFF);
+        @include border-radius(5px);
+        padding: 14px 65px 12px;
+        img{
+          margin-left: 15px;
+          width: 5px;
+        }
+        .green{
+          display: none;
+        }
+        &:hover{
+          background-color: #FFF;
+          color: $green;
+          img{
+            display: none;
+          }
+          img.green{
+            display: block;
+          }
+        }
+      }
+    }
+    .loan-app{
+      margin-top: 50px;
+      background-color: #FFF;
+      border: 1px solid #E6E6E6;
+      box-shadow: 0 20px 100px #eaeaea;
+      @include border-radius(3px);
+      .top{
+        background-color: $green;
+        height: 80px;
+        h2{
+          @include font-style($mtavruli-bold,24px,#FFF);
+          @media (max-width: 767px){
+            font-size: 20px;
+          }
+        }
+      }
+      .loan-app_block{
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        .loan-item{
+          label{
+            margin-top: 30px;
+            margin-bottom: 10px;
+            @include font-style($mtavruli-bold,14px,$dark);
+          }
+          .input-txt{
+            border: 1px solid #DBDBDB;
+            @include border-radius(3px);
+            width: 400px;
+            height: 50px;
+            @include font-style($primary-font,12px,$dark);
+            padding-left: 10px;
+          }
+          .bootstrap-select{
+            border: 1px solid #DBDBDB;
+            width: 400px;
+            height: 50px;
+            @include border-radius(3px);
+            .btn-light{
+              border: none;
+              background-color: #FFF;
+              @include display-flex;
+              @include align-items(center);
+              &:focus{
+                outline: none!important;
+              }
+              &:hover{
+                border: none;
+              }
+            }
+            span{
+              @include font-style($primary-font,14px,$dark);
+            }
+            @media (max-width: 575px){
+              width: 320px;
+            }
+          }
+          .check-block{
+            height: 50px;
+            width: 300px;
+          }
+          .sex {
+            margin-top: 0;
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            @include font-style($primary-font,12px,$dark);
+            input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+            }
+          }
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border: 1px solid #D9D9D9;
+            border-radius: 50%;
+          }
+          .sex:hover input ~ .checkmark {
+            background-color: #ccc;
+          }
+          .sex input:checked ~ .checkmark {
+            background-color: $green;
+          }
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+          .sex input:checked ~ .checkmark:after {
+            display: block;
+          }
+          .sex .checkmark:after {
+            left: 7px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+          .pay-input{
+            width: 400px;
+            position: relative;
+            .icon{
+              position: absolute;
+              right: 20px;
+              top: 10px;
+              @include font-style($primary-font,24px,#9B9B9B);
+            }
+          }
+        }
+        .datepicker{
+          padding: 0 15px;
+          label{
+            margin-bottom: 10px;
+          }
+          .date{
+            width: 400px;
+            &:after{
+              content: '\f073';
+              font-family: FontAwesome;
+              display: block;
+              position: absolute;
+              color: #AEABAB;
+              right: 10px;
+              top: 15px;
+            }
+          }
+          input{
+            position: relative;
+            border: 1px solid #DDDDDD;
+            width: 400px;
+            height: 50px;
+            padding: 12px;
+            @include box-shadow-none;
+            @include border-radius(5px);
+            background-color: #FFF;
+            @include font-style($primary-font,14px,#4E4E4E);
+            margin-left: 0;
+            padding-right: 30px;
+            &:after{
+              content: '\f017';
+              font-family: FontAwesome;
+              display: block;
+              position: absolute;
+              color: #008349;
+              right: 10px;
+              top: 15px;
+              font-size: 18px;
+            }
+          }
+        }
+        .datepicker > div{
+          display: block;
+          .form-control{
+            height: 50px;
+            width: 400px;
+            @include border-radius(3px);
+            border: 1px solid #DBDBDB;
+            @include font-style($primary-font,12px,$dark);
+            &:focus{
+              @include box-shadow-none;
+            }
+          }
+        }
+        @media (max-width: 991px){
+          width: 100%;
+          .loan-item{
+            label{
+              font-size: 12px!important;
+            }
+            .input-txt, .bootstrap-select, .date, .pay-input{
+              width: 300px!important;
+            }
+          }
+        }
+        @media (max-width: 767px){
+          .loan-item{
+            @include align-items(center);
+          }
+        }
+      }
+      .final-block{
+        margin-bottom: 80px;
+        .next-btn{
+          width: auto;
+          background-color: $green;
+          border: 1px solid $green;
+          @include font-style($mtavruli-bold,16px,#FFF);
+          @include border-radius(5px);
+          padding: 14px 65px 12px;
+          img{
+            margin-left: 15px;
+            width: 5px;
+          }
+          .green{
+            display: none;
+          }
+          &:hover{
+            background-color: #FFF;
+            color: $green;
+            img{
+              display: none;
+            }
+            img.green{
+              display: block;
+            }
+          }
+        }
+        .final-txt{
+          padding: 0 20px;
+          text-align: center;
+          margin: 60px 0;
+          @include font-style($primary-font,18px,$dark);
+        }
+      }
+    }
+    .loan-app_btn{
+      margin-top: 40px;
+      .next-btn{
+        width: auto;
+        background-color: $green;
+        border: 1px solid $green;
+        @include font-style($mtavruli-bold,16px,#FFF);
+        @include border-radius(5px);
+        padding: 14px 65px 12px;
+        img{
+          margin-left: 15px;
+          width: 5px;
+        }
+        .green{
+          display: none;
+        }
+        &:hover{
+          background-color: #FFF;
+          color: $green;
+          img{
+            display: none;
+          }
+          img.green{
+            display: block;
           }
         }
       }
@@ -728,14 +1695,23 @@ p{
         img{
           max-width: 140px;
         }
+        @media (max-width: 991px){
+          margin-bottom: 20px;
+        }
       }
       .footer-menu{
         .footer-menu_item{
           .footer-menu_link{
             @include font-style($mtavruli-bold,16px,$dark);
+            @media (max-width: 575px){
+              font-size: 12px;
+            }
           }
           &:not(:first-child){
             margin-left: 30px;
+          }
+          @media (max-width: 991px){
+            margin-left: 0!important;
           }
         }
       }
@@ -745,6 +1721,9 @@ p{
       span{
         margin-bottom: 10px;
         @include font-style($primary-font,12px,#9B9B9B);
+        @media (max-width: 767px){
+          margin-left: 10px;
+        }
       }
       img{
         margin-top: 20px;
@@ -762,6 +1741,22 @@ p{
           }
         }
       }
+      @media (max-width: 767px){
+        margin-top: 30px;
+      }
     }
   }
 }
+
+.input-effect{z-index: 1;width: 100%; float: left; position: relative;} /* necessary to give position: relative to parent. */
+input{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box;}
+
+
+.effect-16{border: 0; padding: 14px 0; border-bottom: 1px solid #DDDDDD; background-color: transparent;}
+
+.effect-16 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; transition: 0.4s;}
+.effect-16:focus ~ .focus-border,
+.has-content.effect-16 ~ .focus-border{width: 100%; transition: 0.4s;}
+.effect-16 ~ label{position: absolute; left: 20px; width: 100%; top: 15px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-16:focus ~ label, .has-content.effect-16 ~ label{top: -9px; left: 10px; color: $green!important; background-color: #FFF; padding: 0 10px;  z-index: 1; width: auto; font-size: 12px; font-family: $mtavruli-bold!important; transition: 0.3s;}
+

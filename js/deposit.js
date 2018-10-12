@@ -1,0 +1,25 @@
+$('.next-btn1').click(function(){
+    $('.first-step').hide();
+    $('.second-step').show();
+    $('.step2').addClass('active');
+});
+$('.next-btn2').click(function(){
+    $('.second-step').hide();
+    $('.third-step').show();
+    $('.step3').addClass('active');
+});
+$('.next-btn3').click(function(){
+    $('.third-step').hide();
+    $('.fourth-step').show();
+    $('.step4').addClass('active');
+});
+$('.next-btn4').click(function(){
+    $('.fourth-step').hide();
+    $('.fifth-step').show();
+    $('.step5').addClass('active');
+});
+$('.next-btn5').click(function(){
+    $('.fifth-step').hide();
+    $('.sixth-step').show();
+    $('.step6').addClass('active');
+});
